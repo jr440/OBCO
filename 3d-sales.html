@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | 3D Printing Sales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at 20% 0%, #1f2c3b 0%, var(--bg-main) 40%, var(--bg-dark) 100%);
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: rgba(13, 19, 28, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.82rem;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            transition: color 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-logo img {
+            height: 52px;
+            width: auto;
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 70px 20px 40px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-weight: 300;
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            line-height: 1.2;
+            margin: 0 0 16px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            margin: 0 0 24px;
+            max-width: 56ch;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 18px;
+            letter-spacing: 1.4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--bg-dark);
+            font-weight: 600;
+        }
+
+        .btn-secondary {
+            border-color: rgba(212, 184, 134, 0.5);
+            color: var(--text-light);
+        }
+
+        .hero-panel {
+            background: linear-gradient(180deg, rgba(212, 184, 134, 0.12), rgba(13, 19, 28, 0.6));
+            border: 1px solid rgba(212, 184, 134, 0.35);
+            padding: 22px;
+        }
+
+        .hero-panel h2 {
+            margin-top: 0;
+            font-weight: 400;
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .hero-panel ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+            margin: 0 0 24px;
+            text-transform: uppercase;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: rgba(13, 19, 28, 0.9);
+            border: 1px solid rgba(212, 184, 134, 0.35);
+            padding: 18px;
+        }
+
+        .card h3 {
+            margin: 0 0 6px;
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 10px;
+            padding: 26px 18px;
+            border: 1px solid rgba(212, 184, 134, 0.35);
+            background: rgba(13, 19, 28, 0.75);
+        }
+
+        footer {
+            margin-top: 28px;
+            background-color: var(--bg-dark);
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            padding: 22px 14px;
+            text-align: center;
+            color: #8490a1;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 46px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="pricing-guide.html">Pricing</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="file-prep.html">File Prep</a>
+            <a href="faq.html">FAQ</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div>
+                <div class="eyebrow">Perth / Kununurra Based</div>
+                <h1>3D Printing Sales for Prototypes, Production Runs, and Custom Parts</h1>
+                <p>
+                    From one-off functional parts to short production batches, O.B & CO. delivers reliable FDM printing with practical engineering support.
+                    Upload your design and get a fast cost estimate in minutes.
+                </p>
+                <div class="button-row">
+                    <a class="btn btn-primary" href="quote.html">Get Instant Quote</a>
+                    <a class="btn btn-secondary" href="portfolio.html">See Portfolio</a>
+                </div>
+            </div>
+            <aside class="hero-panel">
+                <h2>What You Can Order</h2>
+                <ul>
+                    <li>Functional brackets and housings</li>
+                    <li>Fixture and workshop tooling</li>
+                    <li>Concept and presentation models</li>
+                    <li>Small-batch production components</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Materials and Service Tiers</h2>
+            <div class="products">
+                <article class="card">
+                    <h3>PLA Value</h3>
+                    <p>Low-cost, quick-turn prints for prototypes and fit checks.</p>
+                </article>
+                <article class="card">
+                    <h3>PETG Durable</h3>
+                    <p>Better chemical and heat resistance for practical use parts.</p>
+                </article>
+                <article class="card">
+                    <h3>ABS Engineering</h3>
+                    <p>Higher performance option for tougher environments.</p>
+                </article>
+                <article class="card">
+                    <h3>Rush Service</h3>
+                    <p>Priority queue for urgent prototypes and replacement parts.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="cta">
+                <h2 class="section-title" style="margin-bottom: 8px;">Need Pricing Right Now?</h2>
+                <p style="color: var(--text-muted); margin-top: 0;">Upload STL or 3MF files and receive an instant estimate with quantity and material options.</p>
+                <a class="btn btn-primary" href="quote.html">Open Quote Generator</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 O.B & CO. | 3D Printing Sales
+    </footer>
+</body>
+</html>

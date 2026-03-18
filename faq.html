@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | 3D Printing FAQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: linear-gradient(120deg, #0d131c 0%, #152235 50%, #16273b 100%);
+        }
+
+        nav {
+            background: rgba(13, 19, 28, 0.94);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-logo img { height: 50px; }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 40px 20px 52px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 300;
+        }
+
+        .lead {
+            color: var(--text-muted);
+            margin: 0 0 22px;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(212, 184, 134, 0.32);
+            background: rgba(13, 19, 28, 0.88);
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: var(--text-light);
+            font-family: inherit;
+            text-align: left;
+            font-size: 0.92rem;
+            letter-spacing: 0.5px;
+            padding: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question span:last-child { color: var(--gold); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+            color: var(--text-muted);
+            padding: 0 14px;
+            font-size: 0.9rem;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding-bottom: 14px;
+        }
+
+        .cta {
+            border: 1px solid rgba(212, 184, 134, 0.3);
+            background: rgba(212, 184, 134, 0.08);
+            padding: 16px;
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: var(--gold);
+            color: #0d131c;
+            padding: 10px 14px;
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 18px;
+            color: #8490a3;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="pricing-guide.html">Pricing</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="file-prep.html">File Prep</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p class="lead">Quick answers about lead times, materials, files, and how your instant quote works.</p>
+
+        <section class="faq-item">
+            <button class="faq-question" type="button"><span>What file formats can I upload?</span><span>+</span></button>
+            <div class="faq-answer">The instant quote page currently accepts STL and 3MF files. If you have STEP or other CAD formats, email us and we can convert or review them manually.</div>
+        </section>
+
+        <section class="faq-item">
+            <button class="faq-question" type="button"><span>How accurate is the instant quote?</span><span>+</span></button>
+            <div class="faq-answer">It is a practical estimate based on file size, material, print quality, infill, quantity, and turnaround. Final pricing can adjust after support strategy and orientation review.</div>
+        </section>
+
+        <section class="faq-item">
+            <button class="faq-question" type="button"><span>What is your normal turnaround?</span><span>+</span></button>
+            <div class="faq-answer">Standard jobs are usually 4-6 business days. Priority and rush options are available for urgent project deadlines.</div>
+        </section>
+
+        <section class="faq-item">
+            <button class="faq-question" type="button"><span>Can you print production quantities?</span><span>+</span></button>
+            <div class="faq-answer">Yes. We support one-off prototypes through short-run production batches. Upload one part file and set quantity on the quote page.</div>
+        </section>
+
+        <section class="faq-item">
+            <button class="faq-question" type="button"><span>Do you offer design help?</span><span>+</span></button>
+            <div class="faq-answer">Yes. We can review your model for printability and suggest design tweaks for strength, fit, and cost efficiency before production.</div>
+        </section>
+
+        <section class="cta">
+            <div>Need pricing right now or still preparing files?</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a class="btn" href="file-prep.html">Prep Guide</a>
+                <a class="btn" href="quote.html">Quote Tool</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 O.B & CO. | FAQ</footer>
+
+    <script>
+        const faqButtons = document.querySelectorAll('.faq-question');
+
+        faqButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const parent = button.parentElement;
+                const icon = button.querySelector('span:last-child');
+                const isOpen = parent.classList.contains('open');
+
+                parent.classList.toggle('open');
+                icon.textContent = isOpen ? '+' : '-';
+            });
+        });
+    </script>
+</body>
+</html>

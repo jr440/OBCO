@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: linear-gradient(135deg, #0d131c 0%, #152437 55%, #101824 100%);
+        }
+
+        nav {
+            background: rgba(13, 19, 28, 0.94);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 42px 20px 52px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 300;
+        }
+
+        .lead {
+            margin: 0 0 24px;
+            color: var(--text-muted);
+            max-width: 70ch;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .project {
+            border: 1px solid rgba(212, 184, 134, 0.32);
+            background: rgba(13, 19, 28, 0.88);
+            overflow: hidden;
+        }
+
+        .project-visual {
+            min-height: 170px;
+            background: linear-gradient(135deg, rgba(212, 184, 134, 0.18), rgba(212, 184, 134, 0.02));
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(224, 224, 224, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .project-body {
+            padding: 18px;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--gold);
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+        }
+
+        .project h2 {
+            margin: 0 0 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .project p {
+            margin: 0 0 10px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .cta {
+            margin-top: 22px;
+            border: 1px solid rgba(212, 184, 134, 0.3);
+            background: rgba(212, 184, 134, 0.07);
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: var(--gold);
+            color: #0d131c;
+            padding: 10px 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 18px;
+            color: #8390a2;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Selected Project Types</h1>
+        <p class="lead">This page gives the portfolio section a proper landing page and creates space for real project photography and case-study detail. The current entries are structured so you can replace each placeholder visual with actual job images as they become available.</p>
+
+        <section class="projects">
+            <article class="project">
+                <div class="project-visual">Project Image Placeholder</div>
+                <div class="project-body">
+                    <span class="tag">Drafting</span>
+                    <h2>Workshop and fabrication drawing packages</h2>
+                    <p>Structured drawing output for buildability, coordination, and clearer handoff between concept and production.</p>
+                    <p>Good fit for jobs that need dimensional clarity, documentation cleanup, or revisions from marked-up drafts.</p>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-visual">Project Image Placeholder</div>
+                <div class="project-body">
+                    <span class="tag">Product Design</span>
+                    <h2>Custom functional components and housings</h2>
+                    <p>Part concepts developed around actual use conditions, assembly constraints, and printability rather than visual mock-up alone.</p>
+                    <p>Suitable for brackets, enclosures, replacement parts, and fit-for-purpose workshop solutions.</p>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-visual">Project Image Placeholder</div>
+                <div class="project-body">
+                    <span class="tag">Prototyping</span>
+                    <h2>Fast prototype iterations for fit and function</h2>
+                    <p>Rapid print cycles to validate geometry, mounting positions, tolerances, and practical handling before committing to larger runs.</p>
+                    <p>Best when speed matters and changes are expected between revisions.</p>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-visual">Project Image Placeholder</div>
+                <div class="project-body">
+                    <span class="tag">Production</span>
+                    <h2>Short-run printed parts for repeatable use</h2>
+                    <p>Small batches of practical FDM parts where consistency, turnaround, and communication matter more than mass-production scale.</p>
+                    <p>Useful for jigs, fixtures, custom accessories, and low-volume replacement components.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="cta">
+            <div>
+                <strong>Next step for this page:</strong>
+                <div style="margin-top: 4px; color: var(--text-muted); font-size: 0.9rem;">Replace the visual placeholders with real photos and add one short result metric or job outcome under each project.</div>
+            </div>
+            <a class="btn" href="contact.html">Discuss a Similar Job</a>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 O.B & CO. | Portfolio</footer>
+</body>
+</html>

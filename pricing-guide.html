@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | 3D Printing Pricing Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: linear-gradient(145deg, #0d131c 0%, #132033 45%, #101b2c 100%);
+        }
+
+        nav {
+            background: rgba(13, 19, 28, 0.94);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.78rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-logo img { height: 50px; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 42px 20px 52px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .lead {
+            color: var(--text-muted);
+            max-width: 70ch;
+            margin: 10px 0 24px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .card {
+            background: rgba(13, 19, 28, 0.88);
+            border: 1px solid rgba(212, 184, 134, 0.33);
+            padding: 16px;
+        }
+
+        .card h2 {
+            margin: 0 0 8px;
+            color: var(--gold);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .table-wrap {
+            border: 1px solid rgba(212, 184, 134, 0.3);
+            background: rgba(13, 19, 28, 0.9);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid rgba(212, 184, 134, 0.15);
+            font-size: 0.9rem;
+        }
+
+        th {
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 0.78rem;
+        }
+
+        .cta {
+            margin-top: 22px;
+            border: 1px solid rgba(212, 184, 134, 0.3);
+            background: rgba(212, 184, 134, 0.07);
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: var(--gold);
+            color: #0d131c;
+            padding: 10px 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 18px;
+            color: #8390a2;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="mechanical-drafting-hvac.html">HVAC Drafting</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="3d-sales.html">3D Sales</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="file-prep.html">File Prep</a>
+            <a href="faq.html">FAQ</a>
+            <a href="quote.html">Get Quote</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>3D Printing Pricing Guide</h1>
+        <p class="lead">Use this guide to understand cost drivers before you upload. Your final instant quote is generated on the quote page using your exact settings.</p>
+
+        <section class="cards">
+            <article class="card">
+                <h2>Base Setup</h2>
+                <p>Each unique part includes setup and machine prep time. Batch quantities lower effective per-part overhead.</p>
+            </article>
+            <article class="card">
+                <h2>Material Impact</h2>
+                <p>PLA is the most cost-effective. PETG and ABS carry a higher multiplier due to print constraints and handling.</p>
+            </article>
+            <article class="card">
+                <h2>Quality & Infill</h2>
+                <p>Fine layer height and higher infill increase print time and material use, which raises cost.</p>
+            </article>
+            <article class="card">
+                <h2>Turnaround</h2>
+                <p>Priority and rush jobs apply schedule multipliers to reserve immediate machine capacity.</p>
+            </article>
+        </section>
+
+        <section class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Option</th>
+                        <th>Typical Use</th>
+                        <th>Cost Effect</th>
+                        <th>Lead Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Draft Quality</td>
+                        <td>Fast concept checks</td>
+                        <td>Lower than standard</td>
+                        <td>1-4 business days</td>
+                    </tr>
+                    <tr>
+                        <td>Standard Quality</td>
+                        <td>General prototyping</td>
+                        <td>Baseline price</td>
+                        <td>4-6 business days</td>
+                    </tr>
+                    <tr>
+                        <td>Fine Quality</td>
+                        <td>Display surfaces and details</td>
+                        <td>Higher than standard</td>
+                        <td>5-8 business days</td>
+                    </tr>
+                    <tr>
+                        <td>Priority Queue</td>
+                        <td>Project deadlines</td>
+                        <td>+15% multiplier</td>
+                        <td>2-3 business days</td>
+                    </tr>
+                    <tr>
+                        <td>Rush Queue</td>
+                        <td>Urgent replacement parts</td>
+                        <td>+25% multiplier</td>
+                        <td>24-48 hours</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="cta">
+            <div>
+                <strong>Ready for exact pricing?</strong>
+                <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Upload STL or 3MF and generate your estimate instantly.</div>
+            </div>
+            <a class="btn" href="quote.html">Open Quote Tool</a>
+        </section>
+
+        <section class="cta" style="margin-top: 12px;">
+            <div>
+                <strong>Need HVAC drafting support or a quick duct sizing check?</strong>
+                <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Visit the HVAC and mechanical drafting page and use the free duct calculator tool.</div>
+            </div>
+            <a class="btn" href="mechanical-drafting-hvac.html">Open HVAC Page</a>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 O.B & CO. | Pricing Guide</footer>
+</body>
+</html>

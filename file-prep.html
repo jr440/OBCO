@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | STL & 3MF File Prep</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: radial-gradient(circle at 0% 0%, #243752 0%, #162436 42%, #0d131c 100%);
+        }
+
+        nav {
+            background-color: rgba(13, 19, 28, 0.95);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.24);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-logo img { height: 50px; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 50px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(1.6rem, 4vw, 2.3rem);
+            font-weight: 300;
+        }
+
+        .lead {
+            margin: 0 0 24px;
+            color: var(--text-muted);
+            max-width: 70ch;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .card {
+            background: rgba(13, 19, 28, 0.88);
+            border: 1px solid rgba(212, 184, 134, 0.33);
+            padding: 16px;
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            color: var(--gold);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .card li { margin-bottom: 6px; }
+
+        .banner {
+            margin-top: 16px;
+            border: 1px solid rgba(212, 184, 134, 0.3);
+            background: rgba(212, 184, 134, 0.08);
+            padding: 16px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 14px;
+            text-decoration: none;
+            background: var(--gold);
+            color: #0d131c;
+            padding: 10px 14px;
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 18px;
+            color: #8490a3;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 860px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="pricing-guide.html">Pricing</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="faq.html">FAQ</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>STL & 3MF File Preparation Guide</h1>
+        <p class="lead">A clean model gives you faster turnaround, better print quality, and more accurate instant pricing.</p>
+
+        <section class="grid">
+            <article class="card">
+                <h2>Model Integrity</h2>
+                <ul>
+                    <li>Export as a watertight manifold mesh (no holes).</li>
+                    <li>Remove non-manifold edges and intersecting surfaces.</li>
+                    <li>Avoid flipped normals and duplicate shells.</li>
+                    <li>If multi-body, combine only parts you want printed as one piece.</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Scale & Units</h2>
+                <ul>
+                    <li>Use millimeters as your export unit.</li>
+                    <li>Confirm critical dimensions before upload.</li>
+                    <li>Apply transforms and reset scale in CAD before export.</li>
+                    <li>Include tolerance in mating parts (typically 0.2mm to 0.4mm for FDM).</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Printability Rules</h2>
+                <ul>
+                    <li>Minimum wall thickness: 1.2mm recommended.</li>
+                    <li>Text and embossed details: 0.6mm or larger features.</li>
+                    <li>Large overhangs may need supports and cleanup time.</li>
+                    <li>Use fillets/chamfers on stress points for stronger parts.</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>File Best Practices</h2>
+                <ul>
+                    <li>Use 3MF when possible for richer metadata and color grouping.</li>
+                    <li>Keep file names clear: part-name_revA_qty10.stl</li>
+                    <li>For assemblies, upload each part separately unless fused by design.</li>
+                    <li>Zip supporting notes/images if tolerances or orientation are critical.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="banner">
+            Need a design check before printing? Email your model and intended use case for a manufacturability review.
+            <br>
+            <a class="btn" href="quote.html">Upload and Quote</a>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 O.B & CO. | File Preparation</footer>
+</body>
+</html>

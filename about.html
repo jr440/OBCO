@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: radial-gradient(circle at 20% 0%, #203044 0%, #162334 40%, #0d131c 100%);
+        }
+
+        nav {
+            background: rgba(13, 19, 28, 0.94);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .hero,
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 18px;
+            align-items: start;
+            padding-top: 48px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.78rem;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            margin: 0 0 14px;
+            font-size: clamp(1.8rem, 5vw, 2.9rem);
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p,
+        li {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        .panel,
+        .card {
+            border: 1px solid rgba(212, 184, 134, 0.3);
+            background: rgba(13, 19, 28, 0.88);
+            padding: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            color: var(--gold);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .cta {
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: var(--gold);
+            color: #0d131c;
+            padding: 10px 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 0.76rem;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 18px;
+            color: #8490a3;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="mechanical-drafting-hvac.html">HVAC Drafting</a>
+            <a href="portfolio.html">Portfolio</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div>
+                <div class="eyebrow">Perth / Kununurra Based</div>
+                <h1>Practical drafting, product design, and 3D printing support for real-world jobs.</h1>
+                <p>O.B & CO. combines technical drafting, functional design thinking, and fast-turnaround FDM production to help clients move from concept to usable part. The focus is on jobs that need to work in practice, not just look good on screen.</p>
+                <p>That includes drawing packages, custom parts, repair components, workshop tooling, prototype iterations, and short-run production pieces where speed and clear communication matter.</p>
+            </div>
+
+            <aside class="panel">
+                <h2>What We Do</h2>
+                <ul class="list">
+                    <li>Mechanical drafting and documentation support</li>
+                    <li>HVAC drafting workflows and service coordination support</li>
+                    <li>Functional CAD modelling for custom parts</li>
+                    <li>3D printed prototypes and small-batch production</li>
+                    <li>Printability review and design-for-manufacture guidance</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="section">
+            <div class="grid">
+                <article class="card">
+                    <h3>Technical First</h3>
+                    <p>Projects are approached from a usability and buildability perspective, with attention to dimensions, tolerance, strength, and practical assembly.</p>
+                </article>
+                <article class="card">
+                    <h3>Fast Feedback</h3>
+                    <p>Instant quoting and direct communication help reduce back-and-forth when a part needs to be checked, revised, and produced quickly.</p>
+                </article>
+                <article class="card">
+                    <h3>Flexible Scope</h3>
+                    <p>Support ranges from one-off parts and design tweaks through to repeatable short-run output for fixtures, housings, and replacement components.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="panel">
+                <h2>How Work Typically Starts</h2>
+                <p>Some jobs start with an existing STL or 3MF and move straight into pricing. Others start with a rough sketch, a broken part, a site condition, or a functional requirement that still needs drafting or modelling support. The site is structured to support both paths.</p>
+                <div class="cta">
+                    <p style="margin: 0;">If you already have a printable file, go straight to the instant quote tool. If you need design or drafting help first, use the contact page to describe the job.</p>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <a class="btn" href="quote.html">Open Quote Tool</a>
+                        <a class="btn" href="mechanical-drafting-hvac.html">HVAC & Drafting</a>
+                        <a class="btn" href="contact.html">Start an Enquiry</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 O.B & CO. | About</footer>
+</body>
+</html>

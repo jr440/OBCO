@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | 3D Print Quote</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+            --ok: #98c37b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: radial-gradient(circle at 90% 0%, #213247 0%, #16222f 35%, #0d131c 100%);
+        }
+
+        nav {
+            background-color: rgba(13, 19, 28, 0.94);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 34px 20px 55px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .panel {
+            background: rgba(13, 19, 28, 0.86);
+            border: 1px solid rgba(212, 184, 134, 0.3);
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .lead {
+            color: var(--text-muted);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .drop-zone {
+            border: 1.5px dashed rgba(212, 184, 134, 0.55);
+            padding: 24px;
+            text-align: center;
+            background: rgba(212, 184, 134, 0.06);
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .drop-zone.active {
+            border-color: var(--gold);
+            background: rgba(212, 184, 134, 0.15);
+        }
+
+        .drop-zone p {
+            margin: 0 0 10px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .button {
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 10px 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 0.76rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        label {
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        select,
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background: #0b1017;
+            color: var(--text-light);
+            border: 1px solid rgba(212, 184, 134, 0.25);
+            font-family: inherit;
+        }
+
+        .quote-card {
+            display: grid;
+            gap: 12px;
+        }
+
+        .line-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+            padding-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .line-item strong {
+            color: var(--text-light);
+        }
+
+        .quote-total {
+            margin-top: 6px;
+            padding: 12px;
+            background: rgba(152, 195, 123, 0.12);
+            border: 1px solid rgba(152, 195, 123, 0.35);
+            color: var(--ok);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .muted {
+            color: #8692a5;
+            font-size: 0.82rem;
+            margin: 8px 0 0;
+        }
+
+        .status {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(212, 184, 134, 0.45);
+            background: transparent;
+            color: var(--text-light);
+        }
+
+        .button[disabled],
+        .button-secondary[disabled] {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        footer {
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 18px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #7f8b9e;
+        }
+
+        @media (max-width: 920px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .field-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="pricing-guide.html">Pricing</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="file-prep.html">File Prep</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="layout">
+        <section class="panel">
+            <h1>Instant 3D Print Quote</h1>
+            <p class="lead">Upload STL or 3MF, select production settings, and generate an estimate instantly.</p>
+
+            <div id="dropZone" class="drop-zone">
+                <p><strong>Drop your STL or 3MF file here</strong></p>
+                <p>or click below to browse</p>
+                <button type="button" class="button" id="browseBtn">Choose File</button>
+                <input type="file" id="fileInput" accept=".stl,.3mf" hidden>
+            </div>
+            <p id="fileStatus" class="status">No file selected.</p>
+
+            <div class="field-grid">
+                <div>
+                    <label for="material">Material</label>
+                    <select id="material">
+                        <option value="PLA">PLA</option>
+                        <option value="PETG">PETG</option>
+                        <option value="ABS">ABS</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="quality">Layer Quality</label>
+                    <select id="quality">
+                        <option value="standard">Standard (0.2mm)</option>
+                        <option value="fine">Fine (0.12mm)</option>
+                        <option value="draft">Draft (0.28mm)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="infill">Infill %</label>
+                    <input id="infill" type="number" min="5" max="100" step="5" value="20">
+                </div>
+                <div>
+                    <label for="quantity">Quantity</label>
+                    <input id="quantity" type="number" min="1" max="500" value="1">
+                </div>
+                <div>
+                    <label for="turnaround">Turnaround</label>
+                    <select id="turnaround">
+                        <option value="standard">Standard (4-6 days)</option>
+                        <option value="priority">Priority (2-3 days)</option>
+                        <option value="rush">Rush (24-48 hrs)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="shipping">Shipping</label>
+                    <select id="shipping">
+                        <option value="pickup">Pickup</option>
+                        <option value="metro">Metro Delivery</option>
+                        <option value="regional">Regional WA Delivery</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <button id="quoteBtn" class="button" type="button">Generate Quote</button>
+                <button id="acceptBtn" class="button button-secondary" type="button" disabled>Accept Quote & Continue</button>
+                <input id="customerEmail" type="text" placeholder="Email (optional)">
+            </div>
+            <p class="muted">Need help first? Review <a href="file-prep.html" style="color: var(--gold);">File Prep</a> and <a href="pricing-guide.html" style="color: var(--gold);">Pricing Guide</a>.</p>
+        </section>
+
+        <section class="panel">
+            <h1>Your Estimate</h1>
+            <p class="lead">Estimate updates based on file complexity and print settings.</p>
+
+            <div id="quoteCard" class="quote-card">
+                <div class="line-item"><span>File</span><strong id="qFile">-</strong></div>
+                <div class="line-item"><span>Estimated Print Time</span><strong id="qPrintTime">-</strong></div>
+                <div class="line-item"><span>Material Usage</span><strong id="qMaterialMass">-</strong></div>
+                <div class="line-item"><span>Setup + Machine Time</span><strong id="qSetup">$0.00</strong></div>
+                <div class="line-item"><span>Material Cost</span><strong id="qMaterialCost">$0.00</strong></div>
+                <div class="line-item"><span>Turnaround Multiplier</span><strong id="qTurnaround">x1.00</strong></div>
+                <div class="line-item"><span>Shipping</span><strong id="qShipping">$0.00</strong></div>
+                <div class="line-item"><span>Quote Reference</span><strong id="qReference">-</strong></div>
+                <div class="quote-total" id="qTotal">$0.00</div>
+            </div>
+
+            <p class="muted">This tool provides an instant estimate. Final price may vary after model orientation/support review.</p>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 O.B & CO. | Instant Quote Calculator</footer>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const browseBtn = document.getElementById('browseBtn');
+        const dropZone = document.getElementById('dropZone');
+        const fileStatus = document.getElementById('fileStatus');
+        const quoteBtn = document.getElementById('quoteBtn');
+        const acceptBtn = document.getElementById('acceptBtn');
+
+        const STORAGE_KEY = 'obco_quote_draft';
+
+        let activeFile = null;
+        let activeQuote = null;
+
+        browseBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', () => handleSelectedFile(fileInput.files[0]));
+
+        ['dragenter', 'dragover'].forEach((eventName) => {
+            dropZone.addEventListener(eventName, (event) => {
+                event.preventDefault();
+                dropZone.classList.add('active');
+            });
+        });
+
+        ['dragleave', 'drop'].forEach((eventName) => {
+            dropZone.addEventListener(eventName, (event) => {
+                event.preventDefault();
+                dropZone.classList.remove('active');
+            });
+        });
+
+        dropZone.addEventListener('drop', (event) => {
+            const droppedFile = event.dataTransfer.files[0];
+            handleSelectedFile(droppedFile);
+        });
+
+        quoteBtn.addEventListener('click', generateQuote);
+        acceptBtn.addEventListener('click', continueToContact);
+
+        function handleSelectedFile(file) {
+            if (!file) {
+                return;
+            }
+
+            const name = file.name.toLowerCase();
+            if (!(name.endsWith('.stl') || name.endsWith('.3mf'))) {
+                activeFile = null;
+                fileStatus.textContent = 'Unsupported file type. Please upload .stl or .3mf';
+                return;
+            }
+
+            activeFile = file;
+            fileStatus.textContent = `${file.name} selected (${toMB(file.size)} MB)`;
+        }
+
+        function generateQuote() {
+            if (!activeFile) {
+                fileStatus.textContent = 'Select a file before generating a quote.';
+                return;
+            }
+
+            const material = document.getElementById('material').value;
+            const quality = document.getElementById('quality').value;
+            const infillValue = Number(document.getElementById('infill').value);
+            const quantityValue = Number(document.getElementById('quantity').value);
+            const turnaround = document.getElementById('turnaround').value;
+            const shipping = document.getElementById('shipping').value;
+
+            const safeInfill = clamp(isNaN(infillValue) ? 20 : infillValue, 5, 100);
+            const safeQuantity = clamp(isNaN(quantityValue) ? 1 : quantityValue, 1, 500);
+
+            const fileSizeMB = Math.max(activeFile.size / (1024 * 1024), 0.01);
+            const extension = activeFile.name.toLowerCase().endsWith('.3mf') ? '3mf' : 'stl';
+
+            const materialMultiplier = { PLA: 1.0, PETG: 1.2, ABS: 1.35 };
+            const qualityMultiplier = { draft: 0.82, standard: 1.0, fine: 1.28 };
+            const turnaroundMultiplier = { standard: 1.0, priority: 1.2, rush: 1.45 };
+            const shippingCost = { pickup: 0, metro: 12, regional: 24 };
+            const formatMultiplier = extension === '3mf' ? 1.04 : 1.0;
+
+            const estimatedHours = (0.85 + (fileSizeMB * 1.8)) * qualityMultiplier[quality] * (0.7 + safeInfill / 70);
+            const materialGrams = (fileSizeMB * 42) * (0.75 + safeInfill / 60) * materialMultiplier[material] * formatMultiplier;
+
+            const machineRate = 8.5;
+            const setupFee = 14;
+            const materialRatePerGram = 0.11;
+
+            const setupAndMachine = (setupFee + (estimatedHours * machineRate));
+            const materialCost = materialGrams * materialRatePerGram;
+            const perPart = (setupAndMachine + materialCost) * turnaroundMultiplier[turnaround];
+            const subtotal = perPart * safeQuantity;
+            const freight = shippingCost[shipping];
+            const total = Math.max(subtotal + freight, 22);
+            const quoteReference = buildQuoteReference();
+
+            activeQuote = {
+                quoteReference,
+                createdAt: new Date().toISOString(),
+                fileName: activeFile.name,
+                fileSizeMB: toMB(activeFile.size),
+                extension,
+                material,
+                quality,
+                infill: safeInfill,
+                quantity: safeQuantity,
+                turnaround,
+                shipping,
+                estimatedHoursPerPart: Number(estimatedHours.toFixed(2)),
+                materialGramsPerPart: Number(materialGrams.toFixed(0)),
+                setupAndMachine: Number((setupAndMachine * safeQuantity).toFixed(2)),
+                materialCost: Number((materialCost * safeQuantity).toFixed(2)),
+                shippingCost: Number(freight.toFixed(2)),
+                turnaroundMultiplier: turnaroundMultiplier[turnaround],
+                total: Number(total.toFixed(2)),
+                customerEmail: document.getElementById('customerEmail').value.trim()
+            };
+
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(activeQuote));
+            acceptBtn.disabled = false;
+
+            document.getElementById('qFile').textContent = `${activeFile.name} (${toMB(activeFile.size)} MB)`;
+            document.getElementById('qPrintTime').textContent = `${estimatedHours.toFixed(1)} hrs / part`;
+            document.getElementById('qMaterialMass').textContent = `${materialGrams.toFixed(0)} g / part`;
+            document.getElementById('qSetup').textContent = money(setupAndMachine * safeQuantity);
+            document.getElementById('qMaterialCost').textContent = money(materialCost * safeQuantity);
+            document.getElementById('qTurnaround').textContent = `x${turnaroundMultiplier[turnaround].toFixed(2)}`;
+            document.getElementById('qShipping').textContent = money(freight);
+            document.getElementById('qReference').textContent = quoteReference;
+            document.getElementById('qTotal').textContent = money(total);
+        }
+
+        function continueToContact() {
+            if (!activeQuote) {
+                fileStatus.textContent = 'Generate a quote first before continuing.';
+                return;
+            }
+
+            window.location.href = 'quote-confirmation.html';
+        }
+
+        function clamp(value, min, max) {
+            return Math.min(Math.max(value, min), max);
+        }
+
+        function toMB(bytes) {
+            return (bytes / (1024 * 1024)).toFixed(2);
+        }
+
+        function money(value) {
+            return new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD' }).format(value);
+        }
+
+        function buildQuoteReference() {
+            const now = new Date();
+            const y = now.getFullYear();
+            const m = String(now.getMonth() + 1).padStart(2, '0');
+            const d = String(now.getDate()).padStart(2, '0');
+            const random = Math.floor(1000 + Math.random() * 9000);
+            return `OBCO-${y}${m}${d}-${random}`;
+        }
+    </script>
+</body>
+</html>

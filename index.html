@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | Drafting, Design & 3D Printing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Sampleed directly from your logo design for a seamless blend */
+            --bg-main: #131c27; 
+            --bg-dark: #0d131c; 
+            --gold: #d4b886; 
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--bg-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-logo img {
+            height: 60px; 
+            width: auto;
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            /* Path fixed to match your uploaded banner.jpg */
+            background-image: url('banner.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 40px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(19, 28, 39, 0.3);
+        }
+
+        .hero-btn {
+            position: relative;
+            z-index: 1;
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: background-color 0.3s;
+        }
+
+        .hero-btn:hover {
+            background-color: #e6ce9e;
+        }
+
+        /* General Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--gold);
+            padding: 40px 30px;
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        /* Featured Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .project-item {
+            border: 1px solid var(--gold);
+            background-color: var(--bg-dark);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            flex-direction: column;
+        }
+
+        .project-label {
+            margin-top: 10px;
+            color: var(--text-light);
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            padding: 60px 20px;
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .footer-image img {
+            max-width: 350px; 
+            height: auto;
+        }
+
+        .footer-contact {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-contact h4 {
+            color: var(--gold);
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            background-color: #080c12;
+            color: #666;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            .nav-links {
+                gap: 15px;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#services">Services</a>
+            <a href="mechanical-drafting-hvac.html">HVAC Drafting</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="pricing-guide.html">Pricing</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="file-prep.html">File Prep</a>
+            <a href="faq.html">FAQ</a>
+            <a href="#projects">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <a href="quote.html" class="hero-btn">Get Instant 3D Quote</a>
+    </header>
+
+    <div class="container" id="services">
+        <h2 class="section-title">Our Services</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Mechanical Drafting & Modeling</h3>
+                <p>Precision drafting utilizing tools like Revit and pyRevit to deliver accurate technical drawings and documentation for building services.</p>
+                <p><a href="mechanical-drafting-hvac.html" style="color: var(--gold);">View HVAC & Drafting Page</a></p>
+            </div>
+
+            <div class="service-card">
+                <h3>Functional Product Design</h3>
+                <p>Conceptualizing and bringing functional concepts to life, from custom parts to intricate mechanical or electronic DIY ideas.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Rapid 3D Prototyping</h3>
+                <p>High-quality 3D printing services utilizing top-tier FDM equipment, including Bambu Lab and Flashforge printers.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="projects" style="padding-top: 0;">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div>
+                <div class="project-item">
+                    <span style="color: #444;">[Drafting Plan]</span>
+                </div>
+                <div class="project-label">Shop Drawings</div>
+            </div>
+            <div>
+                <div class="project-item">
+                    <span style="color: #444;">[3D Design]</span>
+                </div>
+                <div class="project-label">Design Drawings</div>
+            </div>
+            <div>
+                <div class="project-item">
+                    <span style="color: #444;">[Mechanical Part]</span>
+                </div>
+                <div class="project-label">3d Modeling</div>
+            </div>
+            <div>
+                <div class="project-item">
+                    <span style="color: #444;">[Printed Object]</span>
+                </div>
+                <div class="project-label">FDM Printing</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 20px;">
+        <h2 class="section-title">Plan Your Project</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Pricing Guide</h3>
+                <p>Understand what affects costs before uploading a model.</p>
+                <p><a href="pricing-guide.html" style="color: var(--gold);">View Pricing Guide</a></p>
+            </div>
+            <div class="service-card">
+                <h3>STL & 3MF Prep</h3>
+                <p>Use our checklist to improve print reliability and reduce revisions.</p>
+                <p><a href="file-prep.html" style="color: var(--gold);">Open File Prep Page</a></p>
+            </div>
+            <div class="service-card">
+                <h3>Questions</h3>
+                <p>Review common questions on lead times, materials, and quoting.</p>
+                <p><a href="faq.html" style="color: var(--gold);">Read FAQ</a></p>
+            </div>
+            <div class="service-card">
+                <h3>About O.B & CO.</h3>
+                <p>Learn how drafting, design, and production support fit together across the business.</p>
+                <p><a href="about.html" style="color: var(--gold);">Read About Page</a></p>
+            </div>
+            <div class="service-card">
+                <h3>Portfolio</h3>
+                <p>Review project categories and use this page as the base for future case studies.</p>
+                <p><a href="portfolio.html" style="color: var(--gold);">Open Portfolio</a></p>
+            </div>
+            <div class="service-card">
+                <h3>Free HVAC Duct Calculator</h3>
+                <p>Use my browser-based duct calculator tool at no cost.</p>
+                <p><a href="https://jr440.github.io/WorkTools/Duct-Calc.html" target="_blank" rel="noopener noreferrer" style="color: var(--gold);">Open Free Tool</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-image">
+            <img src="footer.jpg" alt="O.B & CO. Footer Logo">
+        </div>
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="mailto:jesse@obandco.com.au">jesse@obandco.com.au</a> | <a href="contact.html">General Enquiry Form</a></p>
+            <p>Location: Perth / Kununurra, WA</p>
+        </div>
+    </footer>
+    <div class="copyright">
+        &copy; 2026 O.B & CO. | All Rights Reserved
+    </div>
+
+</body>
+</html>

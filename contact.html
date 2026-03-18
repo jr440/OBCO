@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | Contact</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+        // Optional override if you want to set this in-page instead of another script.
+        // window.OB_TURNSTILE_SITE_KEY = 'your_turnstile_site_key';
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+            --text-muted: #aab1bb;
+            --ok: #98c37b;
+            --warn: #d7b369;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            background: radial-gradient(circle at 10% 0%, #25354a 0%, #162436 42%, #0d131c 100%);
+        }
+
+        nav {
+            background-color: rgba(13, 19, 28, 0.94);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .layout {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 34px 20px 56px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .panel {
+            border: 1px solid rgba(212, 184, 134, 0.32);
+            background: rgba(13, 19, 28, 0.9);
+            padding: 18px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-weight: 300;
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+        }
+
+        .lead {
+            margin: 0 0 18px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .info-card {
+            border: 1px solid rgba(212, 184, 134, 0.24);
+            background: rgba(212, 184, 134, 0.05);
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .info-card h2 {
+            margin: 0 0 8px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .info-card p,
+        .info-card li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .info-card ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 6px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            background: #0b1017;
+            color: var(--text-light);
+            border: 1px solid rgba(212, 184, 134, 0.24);
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 96px;
+            resize: vertical;
+        }
+
+        .button-row {
+            margin-top: 14px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: #0d131c;
+            padding: 10px 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-alt {
+            background: transparent;
+            color: var(--text-light);
+            border-color: rgba(212, 184, 134, 0.4);
+        }
+
+        .status {
+            margin-top: 12px;
+            color: var(--warn);
+            font-size: 0.88rem;
+        }
+
+        .turnstile-wrap {
+            margin-top: 14px;
+            padding: 10px;
+            border: 1px solid rgba(212, 184, 134, 0.22);
+            background: rgba(212, 184, 134, 0.06);
+            overflow-x: auto;
+        }
+
+        .ok {
+            color: var(--ok);
+        }
+
+        footer {
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 18px;
+            color: #8490a3;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 920px) {
+            .layout { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="mechanical-drafting-hvac.html">HVAC Drafting</a>
+            <a href="portfolio.html">Portfolio</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+    </nav>
+
+    <main class="layout">
+        <section class="panel">
+            <h1>General Enquiries</h1>
+            <p class="lead">Use this page if you need drafting help, design support, custom part advice, or a project review before quoting.</p>
+
+            <form id="contactForm">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="text" placeholder="Optional">
+
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                    <option value="General enquiry">General enquiry</option>
+                    <option value="Mechanical drafting">Mechanical drafting</option>
+                    <option value="HVAC drafting">HVAC drafting</option>
+                    <option value="Product design">Product design</option>
+                    <option value="3D printing">3D printing</option>
+                    <option value="File review">File review</option>
+                </select>
+
+                <label for="location">Location</label>
+                <input id="location" name="location" type="text" placeholder="Optional">
+
+                <label for="deadline">Needed By</label>
+                <input id="deadline" name="deadline" type="text" placeholder="Optional">
+
+                <label for="message">Project Summary</label>
+                <textarea id="message" name="message" placeholder="What do you need made, drawn, reviewed, or fixed?" required></textarea>
+
+                <div class="turnstile-wrap">
+                    <div id="turnstileContainer"></div>
+                </div>
+
+                <div class="button-row">
+                    <button class="btn" type="submit">Send Enquiry</button>
+                    <a class="btn btn-alt" href="quote.html">Open Quote Tool</a>
+                </div>
+            </form>
+
+            <p id="status" class="status">Tell us what you need and we will review it.</p>
+        </section>
+
+        <section class="panel">
+            <h1>What To Include</h1>
+            <p class="lead">A stronger enquiry comes with enough context to tell whether you need drafting, design work, file fixes, or direct production.</p>
+
+            <div class="info-card">
+                <h2>Useful details</h2>
+                <ul>
+                    <li>What the part, drawing, or design needs to do</li>
+                    <li>Any key dimensions, tolerances, or material constraints</li>
+                    <li>Whether you already have files, photos, or sketches</li>
+                    <li>Your target deadline or whether the job is urgent</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h2>Need a fast estimate?</h2>
+                <p>If you already have a printable STL or 3MF file, the instant quote workflow is still the fastest path. Use the quote tool, then continue to the dedicated confirmation page once you are happy with the estimate.</p>
+            </div>
+
+            <div class="info-card">
+                <h2>Free HVAC Tool</h2>
+                <p>You can also use the free duct calculator here: <a href="https://jr440.github.io/WorkTools/Duct-Calc.html" target="_blank" rel="noopener noreferrer" style="color: var(--gold);">Duct Calculator</a></p>
+            </div>
+
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.86rem;">Default automatic submit endpoint is <strong>/api/contact</strong>. You can override it by setting <strong>window.OB_CONTACT_ENDPOINT</strong> before this script runs.</p>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 O.B & CO. | Contact</footer>
+
+    <script>
+        const OWNER_EMAIL = 'jesse@obandco.com.au';
+        const AUTO_ENDPOINT = window.OB_CONTACT_ENDPOINT || '/api/contact';
+        const TURNSTILE_SITE_KEY = window.OB_TURNSTILE_SITE_KEY || '';
+
+        const statusEl = document.getElementById('status');
+        const form = document.getElementById('contactForm');
+        const turnstileContainer = document.getElementById('turnstileContainer');
+
+        initTurnstile();
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const payload = {
+                contact: {
+                    fullName: document.getElementById('fullName').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    phone: document.getElementById('phone').value.trim(),
+                    service: document.getElementById('service').value,
+                    location: document.getElementById('location').value.trim(),
+                    deadline: document.getElementById('deadline').value.trim(),
+                    message: document.getElementById('message').value.trim()
+                },
+                turnstileToken: getTurnstileToken(),
+                submittedAt: new Date().toISOString()
+            };
+
+            if (!payload.contact.fullName || !payload.contact.email || !payload.contact.message) {
+                statusEl.textContent = 'Please complete name, email, and project summary.';
+                return;
+            }
+
+            if (!payload.turnstileToken) {
+                statusEl.textContent = 'Please complete the anti-spam check before submitting.';
+                return;
+            }
+
+            statusEl.textContent = 'Sending enquiry...';
+
+            if (AUTO_ENDPOINT) {
+                try {
+                    const response = await fetch(AUTO_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Endpoint returned non-success status.');
+                    }
+
+                    statusEl.textContent = 'Submitted successfully. We will contact you shortly.';
+                    statusEl.classList.add('ok');
+                    form.reset();
+                    if (window.turnstile) {
+                        window.turnstile.reset();
+                    }
+                    return;
+                } catch (_error) {
+                    statusEl.textContent = 'Auto submit failed. Opening a pre-filled email draft instead.';
+                }
+            }
+
+            openMailDraft(payload);
+            statusEl.textContent = 'Email draft opened. Send it to complete your request.';
+        });
+
+        function initTurnstile() {
+            if (!TURNSTILE_SITE_KEY) {
+                turnstileContainer.textContent = 'Anti-spam check is not configured yet. Set window.OB_TURNSTILE_SITE_KEY to enable submissions.';
+                return;
+            }
+
+            if (!window.turnstile || !window.turnstile.render) {
+                window.addEventListener('load', initTurnstile, { once: true });
+                return;
+            }
+
+            window.turnstile.render('#turnstileContainer', {
+                sitekey: TURNSTILE_SITE_KEY,
+                theme: 'dark'
+            });
+        }
+
+        function getTurnstileToken() {
+            const tokenInput = document.querySelector('input[name="cf-turnstile-response"]');
+            return tokenInput ? tokenInput.value.trim() : '';
+        }
+
+        function openMailDraft(payload) {
+            const subject = `Website Enquiry | ${payload.contact.service}`;
+            const body = [
+                `Service: ${payload.contact.service}`,
+                '',
+                'Contact Details',
+                `Name: ${payload.contact.fullName}`,
+                `Email: ${payload.contact.email}`,
+                `Phone: ${payload.contact.phone || '-'}`,
+                `Location: ${payload.contact.location || '-'}`,
+                `Deadline: ${payload.contact.deadline || '-'}`,
+                '',
+                'Project Summary',
+                payload.contact.message
+            ].join('\n');
+
+            const mailto = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailto;
+        }
+    </script>
+</body>
+</html>
