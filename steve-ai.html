@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.B & CO. | Steve, Our AI Phone Assistant</title>
+    <meta name="description" content="Steve is O.B & CO.'s AI phone assistant. If Jesse can't get to the phone, Steve takes your message and passes it straight on.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #131c27;
+            --bg-dark: #0d131c;
+            --gold: #d4b886;
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar (same as other pages) */
+        nav {
+            background-color: var(--bg-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+        }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-logo img { height: 60px; width: auto; }
+
+        /* Page intro */
+        .intro {
+            background-color: var(--bg-dark);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 80px 20px 70px;
+        }
+        .eyebrow {
+            color: var(--gold);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0 0 18px;
+        }
+        .intro h1 {
+            font-size: 2.4rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin: 0 0 22px;
+        }
+        .intro p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+        .ai-badge {
+            display: inline-block;
+            margin-top: 30px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 8px 20px;
+            font-size: 0.78rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* General Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-light);
+            margin: 0 0 50px;
+            text-transform: uppercase;
+        }
+
+        /* Cards (same style as service cards) */
+        .services-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .service-card {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--gold);
+            padding: 40px 30px;
+            flex: 1;
+            min-width: 260px;
+            text-align: center;
+        }
+        .service-card h3 {
+            color: var(--gold);
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 1.05rem;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+        }
+        .service-card p { font-size: 0.9rem; color: #b0b0b0; margin: 0; }
+
+        /* Numbered steps */
+        .step-num {
+            display: block;
+            color: var(--gold);
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* Two-column can / can't */
+        .two-col { display: flex; gap: 30px; flex-wrap: wrap; }
+        .list-box {
+            flex: 1;
+            min-width: 280px;
+            background-color: var(--bg-dark);
+            border: 1px solid rgba(212, 184, 134, 0.35);
+            padding: 35px 35px 25px;
+        }
+        .list-box h3 {
+            color: var(--gold);
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 1.05rem;
+            margin: 0 0 18px;
+            text-transform: uppercase;
+        }
+        .list-box ul { margin: 0; padding-left: 20px; color: #b0b0b0; font-size: 0.92rem; }
+        .list-box li { margin-bottom: 10px; }
+
+        /* FAQ */
+        .faq { max-width: 820px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+            padding: 22px 0;
+        }
+        .faq-item h4 {
+            color: var(--text-light);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+        .faq-item p { color: #b0b0b0; font-size: 0.92rem; margin: 0; }
+
+        /* Call-out band */
+        .band {
+            background-color: var(--bg-dark);
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            border-bottom: 1px solid rgba(212, 184, 134, 0.2);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .band p { color: #b0b0b0; margin: 0 0 25px; }
+        .band .number {
+            display: block;
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: background-color 0.3s;
+        }
+        .hero-btn:hover { background-color: #e6ce9e; }
+
+        /* Footer (same as other pages) */
+        footer {
+            background-color: var(--bg-dark);
+            padding: 60px 20px;
+            border-top: 1px solid rgba(212, 184, 134, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .footer-image img { max-width: 350px; height: auto; }
+        .footer-contact { color: #b0b0b0; font-size: 0.95rem; line-height: 1.8; }
+        .footer-contact h4 {
+            color: var(--gold);
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .footer-contact a { color: var(--gold); text-decoration: none; }
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            background-color: #080c12;
+            color: #666;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 20px; padding: 20px; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .intro h1 { font-size: 1.7rem; letter-spacing: 4px; }
+            .container { padding: 60px 16px; }
+            footer { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="mechanical-drafting-hvac.html">HVAC Drafting</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="pricing-guide.html">Pricing</a>
+        </div>
+        <div class="nav-logo">
+            <img src="logo.jpg" alt="O.B & CO. Logo">
+        </div>
+        <div class="nav-links">
+            <a href="3d-sales.html">3D Sales</a>
+            <a href="quote.html">Get Quote</a>
+            <a href="file-prep.html">File Prep</a>
+            <a href="faq.html">FAQ</a>
+            <a href="index.html#projects">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="intro">
+        <p class="eyebrow">Our Phone Assistant</p>
+        <h1>Meet Steve</h1>
+        <p>If Jesse can't get to the phone, you might be greeted by Steve, our AI phone assistant. Steve takes a quick message and passes it straight on to Jesse, so your call never goes unanswered.</p>
+        <span class="ai-badge">Steve is an AI, not a person</span>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">How a Call Works</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="step-num">01</span>
+                <h3>Steve Answers</h3>
+                <p>When Jesse is busy, on site or catching up after hours, Steve picks up and lets you know he's an AI assistant.</p>
+            </div>
+            <div class="service-card">
+                <span class="step-num">02</span>
+                <h3>Leave a Message</h3>
+                <p>Steve asks for your name, what it's about and the best number to call you back on, then reads it back to check.</p>
+            </div>
+            <div class="service-card">
+                <span class="step-num">03</span>
+                <h3>Jesse Follows Up</h3>
+                <p>Your message goes straight to Jesse, and he'll get back to you as soon as he can.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 0;">
+        <h2 class="section-title">What Steve Can &amp; Can't Do</h2>
+        <div class="two-col">
+            <div class="list-box">
+                <h3>Steve Can</h3>
+                <ul>
+                    <li>Answer when Jesse can't</li>
+                    <li>Take your name, message and callback number</li>
+                    <li>Read your message back so nothing gets missed</li>
+                    <li>Pass it on to Jesse</li>
+                </ul>
+            </div>
+            <div class="list-box">
+                <h3>Steve Can't</h3>
+                <ul>
+                    <li>Give quotes, prices, dates or deadlines</li>
+                    <li>Give technical advice or answer questions about jobs</li>
+                    <li>Put your call through to Jesse</li>
+                    <li>Share anyone's personal details, or details about other clients or projects</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 0;">
+        <h2 class="section-title">Common Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h4>Am I talking to a real person?</h4>
+                <p>No. Steve is an AI assistant and will always tell you so. He's there to take a message, not to replace Jesse.</p>
+            </div>
+            <div class="faq-item">
+                <h4>When will Jesse call me back?</h4>
+                <p>Steve can't promise a time, but your message goes straight to Jesse and he'll get back to you as soon as he can.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What happens to my message?</h4>
+                <p>Your call is converted to text so Jesse can read your message. It's used only to follow up on your call and isn't shared with anyone else.</p>
+            </div>
+            <div class="faq-item">
+                <h4>I'd rather not talk to an AI.</h4>
+                <p>No problem. Just hang up and send Jesse a text, or email <a href="mailto:jesse@obandco.com.au" style="color: var(--gold);">jesse@obandco.com.au</a>.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is it urgent?</h4>
+                <p>Let Steve know it's urgent and why. Jesse will see that in your message.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="band">
+        <p>Want to leave a message directly? You can call Steve any time on</p>
+        <span class="number">08 5122 7089</span>
+        <a href="contact.html" class="hero-btn">Or Send an Enquiry</a>
+    </section>
+
+    <footer>
+        <div class="footer-image">
+            <img src="footer.jpg" alt="O.B & CO. Footer Logo">
+        </div>
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="mailto:jesse@obandco.com.au">jesse@obandco.com.au</a> | <a href="contact.html">General Enquiry Form</a></p>
+            <p>Location: Perth / Kununurra, WA</p>
+        </div>
+    </footer>
+    <div class="copyright">
+        &copy; 2026 O.B & CO. | All Rights Reserved
+    </div>
+
+</body>
+</html>
